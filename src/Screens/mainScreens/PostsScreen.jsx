@@ -1,13 +1,15 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
+import { useNavigation } from '@react-navigation/native';
 
 import DefaultScreenPost from "../nestedScreens/DefaultScreenPost";
 import MapScreen from "../nestedScreens/MapScreen";
 import CommentsScreen from "../nestedScreens/CommentsScreen";
 
-const NestedScreen = createNativeStackNavigator();
+const NestedScreen = createStackNavigator();
 
-export default function PostsScreen({navigation}) {
+export default function PostsScreen() {
+  const navigation = useNavigation();
 
    return (
     <NestedScreen.Navigator initialRouteName="DefaultScreen" screenOptions={{headerShown: false}}>

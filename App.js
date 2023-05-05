@@ -1,14 +1,17 @@
 import  React, {useEffect} from 'react';
+import {useFonts} from 'expo-font';
 import * as Location from 'expo-location';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { TouchableWithoutFeedback, Keyboard, StyleSheet} from 'react-native';
+import { TouchableWithoutFeedback, Keyboard} from 'react-native';
 
 import Navigation from './src/Screens/mainScreens/Navigation';
 
-const Stack = createNativeStackNavigator();
-
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'Roboto-Medium' : require('./assets/fonts/Roboto-Medium.ttf')
+  });
 
   useEffect(() => {
     (async () => {

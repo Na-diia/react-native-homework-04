@@ -6,8 +6,11 @@ import { Feather, AntDesign  } from '@expo/vector-icons';
 import { Camera, CameraType } from "expo-camera";
 import { View, Text, TextInput, TouchableOpacity, Image, TouchableWithoutFeedback, Keyboard} from "react-native";
 import {deleteBtn, addText, addBtnActive, addBtn, input, addPostForm, cameraWrap, underText, image, contentImg, container} from './CreateStyle';
+import { useNavigation } from '@react-navigation/native';
 
-const CreatePost = ({navigation}) => {
+const CreatePost = () => {
+   const navigation = useNavigation();
+
     const [photo, setPhoto] = useState(null);
     const [location, setLocation] = useState("");
     const [title, setTitle] = useState("");
@@ -119,7 +122,8 @@ useEffect(() => {
 
 const TabCreate = createBottomTabNavigator();
 
-export default function CreatePostsScreen ({navigation}) {
+export default function CreatePostsScreen () {
+  const navigation = useNavigation();
 
     return (
       <TabCreate.Navigator initialRouteName="Create"

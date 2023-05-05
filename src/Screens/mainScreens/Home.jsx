@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, Feather} from '@expo/vector-icons'; 
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 import PostsScreen from "./PostsScreen";
 import CreatePostsScreen from "./CreatePostScreen/CreatePostsScreen";
@@ -9,7 +10,9 @@ import ProfileScreen from "./ProfileScreen";
 
 const MainTab = createBottomTabNavigator();
 
-export default function Home({navigation}) {
+export default function Home() {
+  const navigation = useNavigation();
+
    return(
     <MainTab.Navigator initialRouteName="DefaultScreen" screenOptions={{
       tabBarShowLabel: false,

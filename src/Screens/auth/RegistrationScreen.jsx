@@ -1,12 +1,15 @@
 import React, {useState } from 'react';
 import { View, StyleSheet, ImageBackground, TextInput, Text, TouchableOpacity, 
-    KeyboardAvoidingView, Platform, Keyboard,
+        KeyboardAvoidingView, Platform, Keyboard,
 } from "react-native";
 import { StatusBar} from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 
 const buttonImg = require('../../../assets/images/add.png');
 
-export default function RegistrationScreen ({navigation}) {
+export default function RegistrationScreen () {
+  const navigation = useNavigation();
+
     const [isShowKeyboard, setIsShowKeyboard] = useState(false);
     const [login, setLogin] = useState("");
     const [email, setEmail] = useState("");

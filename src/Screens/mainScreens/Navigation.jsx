@@ -1,4 +1,4 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import LoginScreen from "../auth/LoginScreen";
 import RegistrationScreen from "../auth/RegistrationScreen";
@@ -6,7 +6,7 @@ import Home from "./Home";
 import CreatePostsScreen from "./CreatePostScreen/CreatePostsScreen";
 import ProfileScreen from "./ProfileScreen";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function Navigation () {
 

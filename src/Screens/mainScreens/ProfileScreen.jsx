@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, TouchableOpacity} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather, Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import posts from '../../Data/posts';
 import Post from '../../components/Post';
@@ -11,10 +12,11 @@ const bgImage = require('../../../assets/bg-image.jpg');
 const avatar = require('../../../assets/images/user-img.jpg');
 const crossBtn = require('../../../assets/images/cross-btn.png');
 
-
 const ProfTabNav = createBottomTabNavigator();
 
-export default function ProfileScreen  ({navigation})  {;
+export default function ProfileScreen  ()  {
+  const navigation = useNavigation();
+
     return( 
         <View style={styles.imgContainer}> 
           <ImageBackground source={bgImage} style={styles.bgImg}>
